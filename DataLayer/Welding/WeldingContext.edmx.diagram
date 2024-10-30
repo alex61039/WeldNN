@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="39f24c600c394a129650bc6e480d6574" Name="Diagram1">
+        <EntityTypeShape EntityType="Welding.Alert" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.EmailTemplate" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.InboxMessage" Width="1.5" PointX="5.625" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.InboxNotification" Width="1.5" PointX="8.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.LogAction" Width="1.5" PointX="18.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.LogActionItem" Width="1.5" PointX="21" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.MailAttachment" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.Maintenance" Width="1.75" PointX="14.125" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.MeasureUnit" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.NetworkDevice" Width="1.75" PointX="10.125" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.Organization" Width="1.5" PointX="5.625" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.OrganizationUnit" Width="1.5" PointX="7.875" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.QueuePushEvent" Width="1.5" PointX="10.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.Setting" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.Status" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.Survey" Width="1.5" PointX="6.375" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.SurveyPass" Width="1.5" PointX="8.625" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.SurveyPassQuestionAnswer" Width="1.5" PointX="10.875" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.SurveyQuestion" Width="1.5" PointX="8.625" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.SurveyQuestionOption" Width="1.5" PointX="10.875" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.Translation" Width="1.5" PointX="0.625" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.WeldingMachineType" Width="2.375" PointX="7" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Welding.WeldingMaterialType" Width="1.875" PointX="17.375" PointY="16.5" IsExpanded="true" />
+        <AssociationConnector Association="Welding.FK_LogActionItem_LogAction" ManuallyRouted="false" />
+        <AssociationConnector Association="Welding.FK_NetworkDevice_OrganizationUnit" ManuallyRouted="false" />
+        <AssociationConnector Association="Welding.FK_OrganizationUnit_Organization" ManuallyRouted="false" />
+        <AssociationConnector Association="Welding.FK_SurveyPass_Survey" ManuallyRouted="false" />
+        <AssociationConnector Association="Welding.FK_SurveyPassQuestionAnswer_SurveyPass" ManuallyRouted="false" />
+        <AssociationConnector Association="Welding.FK_SurveyPassQuestionAnswer_SurveyQuestion" ManuallyRouted="false" />
+        <AssociationConnector Association="Welding.FK_SurveyQuestionOption_SurveyQuestion" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Welding.UserPermission" Width="1.5" PointX="3.75" PointY="5.375" />
+        <EntityTypeShape EntityType="Welding.UserRole" Width="1.5" PointX="3" PointY="13.625" />
+        <EntityTypeShape EntityType="Welding.UserRolePermission" Width="1.5" PointX="6" PointY="12.125" />
+        <AssociationConnector Association="Welding.FK_UserRolePermission_UserPermission" />
+        <AssociationConnector Association="Welding.FK_UserRolePermission_UserRole" />
+        <EntityTypeShape EntityType="Welding.Parameter" Width="1.5" PointX="3" PointY="0.75" />
+        <AssociationConnector Association="Welding.FK_Parameter_MeasureUnit" />
+        <EntityTypeShape EntityType="Welding.Dump" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="Welding.ObjectUpdate" Width="1.5" PointX="25.875" PointY="1.375" />
+        <EntityTypeShape EntityType="Welding.WeldingLimitProgramParameter" Width="2.5" PointX="17.875" PointY="28.625" />
+        <EntityTypeShape EntityType="Welding.WeldingLimitProgramHistory" Width="2.5" PointX="16.25" PointY="25" />
+        <EntityTypeShape EntityType="Welding.WeldingLimitProgramHistoryParameter" Width="3.125" PointX="20" PointY="25" />
+        <AssociationConnector Association="Welding.FK_WeldingLimitProgramHistoryParameter_WeldingLimitProgramHistory" />
+        <EntityTypeShape EntityType="Welding.DetailAssemblyType" Width="2" PointX="18" PointY="6.875" />
+        <EntityTypeShape EntityType="Welding.DetailPart" Width="1.5" PointX="21.75" PointY="3.375" />
+        <EntityTypeShape EntityType="Welding.DetailPartType" Width="1.5" PointX="17.875" PointY="3.375" />
+        <AssociationConnector Association="Welding.FK_DetailPart_DetailPartType" />
+        <AssociationConnector Association="Welding.DetailAssemblyTypePartTypes" />
+        <EntityTypeShape EntityType="Welding.WeldingAssemblyInstruction" Width="2.25" PointX="20.875" PointY="11.5" />
+        <AssociationConnector Association="Welding.FK_WeldingAssemblyInstruction_DetailAssemblyType" />
+        <EntityTypeShape EntityType="Welding.WeldingAssemblyControl" Width="3" PointX="17.375" PointY="11.25" />
+        <AssociationConnector Association="Welding.FK_WeldingAssemblyControl_DetailAssemblyType" />
+        <EntityTypeShape EntityType="Welding.WeldingAssemblyControlResult" Width="2.5" PointX="14" PointY="10.375" />
+        <AssociationConnector Association="Welding.FK_WeldingAssemblyControlResult_WeldingAssemblyControl" />
+        <EntityTypeShape EntityType="Welding.UserAct" Width="1.5" PointX="0.625" PointY="17.375" />
+        <EntityTypeShape EntityType="Welding.WeldingDetailAssemblyTask" Width="2.625" PointX="25.25" PointY="5.875" />
+        <EntityTypeShape EntityType="Welding.WeldingDetailAssemblyTaskState" Width="1.5" PointX="28.625" PointY="6.5" />
+        <AssociationConnector Association="Welding.FK_WeldingDetailAssemblyTaskState_WeldingDetailAssemblyTask" />
+        <EntityTypeShape EntityType="Welding.DetailAssembly" Width="2.5" PointX="21.375" PointY="6.875" />
+        <AssociationConnector Association="Welding.FK_DetailAssembly_DetailAssemblyType" />
+        <AssociationConnector Association="Welding.FK_WeldingAssemblyControlResult_DetailAssembly" />
+        <AssociationConnector Association="Welding.FK_WeldingDetailAssemblyTask_DetailAssembly" />
+        <AssociationConnector Association="Welding.DetailAssemblyParts" />
+        <EntityTypeShape EntityType="Welding.WeldingLimitProgramSchedule" Width="2.625" PointX="17.875" PointY="32" />
+        <EntityTypeShape EntityType="Welding.QueueTask" Width="1.75" PointX="14.375" PointY="2.75" />
+        <EntityTypeShape EntityType="Welding.Notification" Width="1.5" PointX="3.125" PointY="9.375" />
+        <EntityTypeShape EntityType="Welding.LibraryDocument" Width="1.5" PointX="23.375" PointY="16.75" />
+        <EntityTypeShape EntityType="Welding.Document" Width="1.5" PointX="0.75" PointY="19.75" />
+        <EntityTypeShape EntityType="Welding.WeldingMachineParameterValue" Width="2.125" PointX="17.375" PointY="19.375" />
+        <EntityTypeShape EntityType="Welding.WeldingMaterial" Width="2.125" PointX="20" PointY="16.75" />
+        <AssociationConnector Association="Welding.FK_WeldingMaterial_WeldingMaterialType" />
+        <EntityTypeShape EntityType="Welding.UserAccountSession" Width="1.5" PointX="3.5" PointY="21.625" />
+        <EntityTypeShape EntityType="Welding.UserToken" Width="1.5" PointX="3.5" PointY="24.625" />
+        <EntityTypeShape EntityType="Welding.WeldingLimitProgram" Width="2.5" PointX="13" PointY="25.125" />
+        <EntityTypeShape EntityType="Welding.WeldingMachine" Width="2.5" PointX="10.125" PointY="15.25" />
+        <AssociationConnector Association="Welding.FK_Maintenance_WeldingMachine" />
+        <AssociationConnector Association="Welding.FK_WeldingMachine_OrganizationUnit" />
+        <AssociationConnector Association="Welding.FK_WeldingLimitProgram_UserRole" />
+        <AssociationConnector Association="Welding.FK_WeldingLimitProgram_WeldingMachine" />
+        <AssociationConnector Association="Welding.FK_WeldingLimitProgram_WeldingMachineType" />
+        <AssociationConnector Association="Welding.FK_WeldingLimitProgramParameter_WeldingLimitProgram" />
+        <AssociationConnector Association="Welding.FK_WeldingLimitProgramSchedule_WeldingLimitProgram" />
+        <AssociationConnector Association="Welding.FK_WeldingMachine_WeldingMachineType" />
+        <EntityTypeShape EntityType="Welding.Mail" Width="1.5" PointX="5.75" PointY="2" />
+        <AssociationConnector Association="Welding.FK_MailAttachment_Mail" />
+        <EntityTypeShape EntityType="Welding.UserAccount" Width="1.5" PointX="24.125" PointY="20.875" />
+        <AssociationConnector Association="Welding.FK_InboxMessage_UserAccount" />
+        <AssociationConnector Association="Welding.FK_InboxMessage_UserAccount1" />
+        <AssociationConnector Association="Welding.FK_Notification_UserAccount" />
+        <AssociationConnector Association="Welding.FK_Organization_UserAccount" />
+        <AssociationConnector Association="Welding.FK_OrganizationUnit_UserAccount" />
+        <AssociationConnector Association="Welding.FK_UserAccount_OrganizationUnit" />
+        <AssociationConnector Association="Welding.FK_SurveyPass_UserAccount" />
+        <AssociationConnector Association="Welding.FK_UserAccount_UserRole" />
+        <AssociationConnector Association="Welding.FK_UserAccountSession_UserAccount" />
+        <AssociationConnector Association="Welding.FK_UserSession_UserAccount" />
+        <AssociationConnector Association="Welding.FK_WeldingLimitProgram_UserAccount" />
+        <AssociationConnector Association="Welding.UserAccountAct" />
+        <EntityTypeShape EntityType="Welding.WeldingMachineState" Width="2.5" PointX="14.125" PointY="20.5" />
+        <AssociationConnector Association="Welding.FK_WeldingMachineState_WeldingMachine" />
+        <AssociationConnector Association="Welding.FK_WeldingMachineParameterValue_WeldingMachineState" />
+        <EntityTypeShape EntityType="Welding.vWeldingMachineParameterValueNOLOCK" Width="1.5" PointX="0.75" PointY="29.875" />
+        <EntityTypeShape EntityType="Welding.vWeldingMachineStateNOLOCK" Width="1.5" PointX="3.5" PointY="30" />
+        <EntityTypeShape EntityType="Welding.vStatePropValue" Width="1.5" PointX="0.75" PointY="8.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,2702 @@
+﻿{
+  "Inbound": {
+    "Delimiter": "\r\n",
+    "DataPropertiesOffset": 14,
+    "Header": [
+      {
+        "Start": 0,
+        "Length": 1,
+        "Required": true,
+        "ConstantValue": ":"
+      },
+      {
+        "Start": 1,
+        "Length": 12,
+        "PropertyCode": "MACAddress",
+        "Description": "MAC Address",
+"ShowInSummary":  true
+      },
+      {
+        "Start": 13,
+        "Length": 1,
+        "Required": true,
+        "ConstantValue": ";"
+      }
+    ],
+    "Body": [
+      {
+        "Start": 0,
+        "Length": 2,
+        "PropertyCode": "MODEL",
+        "Description": "Модель аппарата",
+        "PropertyType": "number",
+        "ShowInSummary":  true
+      },
+      {
+        "Start": 4,
+        "Length": 2,
+        "PropertyCode": "VERSION",
+        "Description": "Версия прошивки",
+        "PropertyType": "number",
+        "ShowInSummary": true
+      },
+
+      {
+        "Start": 6,
+        "Length": 2,
+        "PropertyCode": "State.material",
+        "Description": "Материал сварочной проволоки",
+        "ShowInSummary": true,
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "01",
+            "Description": "co100_StNU"
+          },
+          {
+            "Value": "00",
+            "Description": "ar82_co18_StNU"
+          },
+          {
+            "Value": "05",
+            "Description": "ar97_co3_X18H8"
+          },
+          {
+            "Value": "04",
+            "Description": "ar97_co3_X18H9"
+          },
+          {
+            "Value": "0D",
+            "Description": "ar100_BrAl9"
+          },
+          {
+            "Value": "0E",
+            "Description": "ar100_BtSi3"
+          },
+          {
+            "Value": "0A",
+            "Description": "ar100_AMz"
+          },
+          {
+            "Value": "09",
+            "Description": "ar100_AMg"
+          },
+          {
+            "Value": "08",
+            "Description": "ar100_Al99"
+          },
+          {
+            "Value": "11",
+            "Description": "Dop1"
+          },
+          {
+            "Value": "13",
+            "Description": "Dop2"
+          },
+          {
+            "Value": "03",
+            "Description": "Dop3"
+          },
+          {
+            "Value": "0f",
+            "Description": "Dop4"
+          },
+          {
+            "Value": "FF",
+            "Description": "*"
+          }
+        ]
+      },
+      {
+        "Start": 8,
+        "Length": 2,
+        "PropertyCode": "State.wType",
+        "Description": "Тип сварки",
+        "ShowInSummary": true,
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "01",
+            "Description": "P-MIG"
+          },
+          {
+            "Value": "02",
+            "Description": "MIG"
+          },
+          {
+            "Value": "05",
+            "Description": "MMA"
+          },
+          {
+            "Value": "06",
+            "Description": "TIG"
+          },
+          {
+            "Value": "07",
+            "Description": "CAC-A"
+          },
+          {
+            "Value": "FF",
+            "Description": "*"
+          }
+        ]
+      },
+      {
+        "Start": 10,
+        "Length": 2,
+        "PropertyCode": "State.torch",
+        "Description": "Режим работы горелки",
+        "ShowInSummary": true,
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "00",
+            "Description": "2 - cycle"
+          },
+          {
+            "Value": "01",
+            "Description": "4 - cycle"
+          },
+          {
+            "Value": "02",
+            "Description": "4 - cycle special"
+          },
+          {
+            "Value": "03",
+            "Description": "dot"
+          },
+          {
+            "Value": "FF",
+            "Description": "*"
+          }
+        ]
+      },
+      {
+        "Start": 12,
+        "Length": 2,
+        "PropertyCode": "State.wireDiam",
+        "ShowInSummary":  true,
+        "Description": "Диаметр сварочной проволоки",
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "00",
+            "Description": "0.8mm"
+          },
+          {
+            "Value": "01",
+            "Description": "1.0mm"
+          },
+          {
+            "Value": "02",
+            "Description": "1.2mm"
+          },
+          {
+            "Value": "04",
+            "Description": "1.6mm"
+          },
+          {
+            "Value": "FF",
+            "Description": "*"
+          }
+        ]
+      },
+      {
+        "Start": 14,
+        "Length": 1,
+        "PropertyCode": "State.parmR",
+        "Description": "Параметры, выведенные на индикаторы, правая группа",
+        "PropertyType": "flags",
+        "Enums": [
+          {
+            "Value": "1",
+            "Description": "Inductance"
+          },
+          {
+            "Value": "2",
+            "Description": "Arc elasticity"
+          },
+          {
+            "Value": "4",
+            "Description": "Voltage"
+          },
+          {
+            "Value": "8",
+            "Description": "Torch Speed"
+          }
+        ]
+      },
+      {
+        "Start": 15,
+        "Length": 1,
+        "PropertyCode": "State.parmL",
+        "Description": "Параметры, выведенные на индикаторы, левая группа",
+        "PropertyType": "flags",
+        "Enums": [
+          {
+            "Value": "1",
+            "Description": "Cathetus"
+          },
+          {
+            "Value": "2",
+            "Description": "Thickness"
+          },
+          {
+            "Value": "4",
+            "Description": "Current"
+          },
+          {
+            "Value": "8",
+            "Description": "Wire speed"
+          }
+        ]
+      },
+      {
+        "Start": 16,
+        "Length": 4,
+        "PropertyCode": "State.state",
+        "Description": "Состояние аппарата",
+        "ShowInSummary": true,
+        "PropertyType": "flags",
+        "Enums": [
+          {
+            "Value": "0001",
+            "Description": "sPLd"
+          },
+          {
+            "Value": "0002",
+            "Description": "sWeld"
+          },
+          {
+            "Value": "0004",
+            "Description": "sError"
+          },
+          {
+            "Value": "0008",
+            "Description": "sGas"
+          },
+          {
+            "Value": "0010",
+            "Description": "PANELconn"
+          },
+          {
+            "Value": "0020",
+            "Description": "PMconn"
+          },
+          {
+            "Value": "0040",
+            "Description": "IDconn"
+          },
+          {
+            "Value": "0080",
+            "Description": "WTconn"
+          },
+          {
+            "Value": "0100",
+            "Description": "sHeadPararm"
+          },
+          {
+            "Value": "0200",
+            "Description": "sAddPararm"
+          },
+          {
+            "Value": "0400",
+            "Description": "sPrgPararm"
+          },
+          {
+            "Value": "0800",
+            "Description": "snPrgPararm"
+          },
+          {
+            "Value": "1000",
+            "Description": "sWire"
+          }
+        ]
+      },
+      {
+        "Start": 20,
+        "Length": 2,
+        "PropertyCode": "State.ctrl",
+        "Description": "Вид управления аппаратом по WT",
+        "ShowInSummary": true,
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "01",
+            "Description": "Free"
+          },
+          {
+            "Value": "02",
+            "Description": "Limited"
+          },
+          {
+            "Value": "05",
+            "Description": "Block"
+          }
+        ]
+      },
+      {
+        "Start": 22,
+        "Length": 2,
+        "PropertyCode": "State.Pnum",
+        "Description": "Номер дополнительного параметра для режима MIG/MAG",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 24,
+        "Length": 2,
+        "PropertyCode": "State.Prg",
+        "Description": "Номер программы работы",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 26,
+        "Length": 4,
+        "PropertyCode": "State.I",
+        "Description": "Ток",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "I",
+          "Multiplier": 1
+        },
+        "ShowInSummary": true
+      },
+      {
+        "Start": 30,
+        "Length": 4,
+        "PropertyCode": "State.U",
+        "Description": "Напряжение",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "В",
+          "Multiplier": 0.1
+        },
+ "ShowInSummary": true
+      },
+      {
+        "Start": 34,
+        "Length": 4,
+        "PropertyCode": "State.Left",
+        "Description": "Левый",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "",
+          "Multiplier": 1
+        },
+        "ShowInSummary": true
+      },
+      {
+        "Start": 38,
+        "Length": 4,
+        "PropertyCode": "State.Right",
+        "Description": "Правый",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "",
+          "Multiplier": 1
+        },
+        "ShowInSummary": true
+      },
+      {
+        "Start": 42,
+        "Length": 4,
+        "PropertyCode": "State.L",
+        "Description": "Индуктивность",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "L",
+          "Multiplier": 0.1,
+          "Base": 50    
+        },
+        "ShowInSummary": true
+      },
+      {
+        "Start": 46,
+        "Length": 4,
+        "PropertyCode": "State.K",
+        "Description": "Размер Катета сварного шва",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "mm",
+          "Multiplier": 0.1
+        },
+        "ShowInSummary": true
+      },
+      {
+        "Start": 50,
+        "Length": 4,
+        "PropertyCode": "State.WS",
+        "Description": "Скорость подачи сварочной проволоки",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "sm/min",
+          "Multiplier": 0.1
+        },
+        "ShowInSummary": true
+      },
+      {
+        "Start": 54,
+        "Length": 4,
+        "PropertyCode": "State.T",
+        "Description": "Толщина металла",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "mm",
+          "Multiplier": 0.1
+        },
+        "ShowInSummary": true
+      },
+      {
+        "Start": 58,
+        "Length": 4,
+        "PropertyCode": "State.S",
+        "Description": "Скорость движения горелки во время сварки",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "mm/sec",
+          "Multiplier": 1
+        },
+        "ShowInSummary": true
+      },
+      {
+        "Start": 62,
+        "Length": 4,
+        "PropertyCode": "State.Flex",
+        "Description": "Степень эластичности дуги",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "",
+          "Multiplier": 0.05,
+          "Base": 100
+         // "NegativeBase": 100,
+         // "PositiveBase": 200
+        },
+        "ShowInSummary": true
+      },
+      {
+        "Start": 66,
+        "Length": 4,
+        "PropertyCode": "State.DS",
+        "Description": "Размер капли",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "L",
+          "Multiplier": 0.1,
+          "Base": 50    
+        },
+        "ShowInSummary": true
+      },
+      {
+        "Start": 70,
+        "Length": 4,
+        "PropertyCode": "State.Ireal",
+        "Description": "Ток Факт",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "I",
+          "Multiplier": 1
+        },
+        "ShowInSummary": true
+      },
+      {
+        "Start": 74,
+        "Length": 4,
+        "PropertyCode": "State.Ureal",
+        "Description": "Напряжение Факт",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "В",
+          "Multiplier": 0.1
+        }, "ShowInSummary": true
+      },
+      {
+        "Start": 78,
+        "Length": 2,
+        "PropertyCode": "State.errors",
+        "Description": "Error number",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 80,
+        "Length": 4,
+        "PropertyCode": "State.ArcF",
+        "Description": "Форсаж дуги",
+        "PropertyType": "number",
+        "Unit": {
+          "UnitCode": "",
+          "Multiplier": 1
+        },
+        "ShowInSummary": true
+      },
+      {
+        "Start": 84,
+        "Length": 4,
+        "PropertyCode": "State.Pcount",
+        "Description": "Номер пакета данных",
+        "PropertyType": "string",
+        "Unit": {
+          "UnitCode": "",
+          "Multiplier": 1
+        },
+        "ShowInSummary": true
+      },
+      {
+        "Start": 88,
+        "Length": 2,
+        "PropertyCode": "State.P12",
+        "Description": "Доп параметр P12",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 90,
+        "Length": 2,
+        "PropertyCode": "State.P13",
+        "Description": "Доп параметр P13",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 92,
+        "Length": 2,
+        "PropertyCode": "State.P14",
+        "Description": "Доп параметр P14",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 94,
+        "Length": 2,
+        "PropertyCode": "State.P15",
+        "Description": "Доп параметр P15",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 96,
+        "Length": 2,
+        "PropertyCode": "State.P16",
+        "Description": "Доп параметр P16",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 98,
+        "Length": 2,
+        "PropertyCode": "State.P17",
+        "Description": "Доп параметр P17",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 100,
+        "Length": 2,
+        "PropertyCode": "State.P18",
+        "Description": "Доп параметр P18",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 102,
+        "Length": 2,
+        "PropertyCode": "State.P19",
+        "Description": "Доп параметр P19",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 104,
+        "Length": 4,
+        "PropertyCode": "State.err",
+        "Description": "Код ошибки",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 108,
+        "Length": 10,
+        "PropertyCode": "rfid",
+        "Description": "Номер карты RFID",
+        "PropertyType": "string",
+       "ShowInSummary": true
+      },
+      {
+        "Start": 118,
+        "Length": 14,
+        "PropertyCode": "scan",
+        "Description": "Данные сканнера",
+        "PropertyType": "string",
+       "ShowInSummary": true
+      },
+
+
+      {
+        "Start": 132,
+        "Length": 2,
+        "PropertyCode": "CRC",
+        "Description": "CRC-8"
+      }
+    ]
+  },
+//////////////////////////////////////////////////////
+  "Outbound": {
+    "Delimiter": "\r\n",
+    "DataPropertiesOffset": 1,
+    "Header": [
+      {
+        "Start": 0,
+        "Length": 1,
+        "Required": true,
+        "ConstantValue": ":"
+      },
+      {
+        "Start": 1,
+        "Length": 12,
+        "PropertyCode": "MACAddress",
+        "Description": "MAC Address"
+      },
+      {
+        "Start": 13,
+        "Length": 1,
+        "Required": true,
+        "ConstantValue": ";"
+      }
+    ],
+    "Body": [
+      // Model
+      {
+        "Start": 0,
+        "Length": 2,
+        "Required": true,
+        "ConstantValue": "0E"
+      },
+      {
+        "Start": 2,
+        "Length": 4,
+        "Required": true,
+        "ConstantValue": "0101"
+      },
+      {
+        "Start": 6,
+        "Length": 2,
+        "PropertyCode": "State.ctrl",
+        "Description": "Вид управления",
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "01",
+            "Description": "Free"
+          },
+          {
+            "Value": "02",
+            "Description": "Limited"
+          },
+          {
+            "Value": "05",
+            "Description": "Block"
+          }
+        ]
+      },
+      {
+        "Start": 8,
+        "Length": 1,
+        "PropertyCode": "Ctrl.parmR",
+        "Description": "Контроль напряжения",
+        "PropertyType": "enum",
+        "Enums": [
+        //  {
+        //    "Value": "1",
+        //    "Description": "State.L"
+        //  },
+          {
+            "Value": "2",
+            "Description": "State.Flex"
+          },
+          {
+            "Value": "4",
+            "Description": "State.U"
+          },
+    //      {
+     //       "Value": "8",
+     //       "Description": "State.S"
+    //      }
+        ]
+      },
+      {
+        "Start": 9,
+        "Length": 1,
+        "PropertyCode": "Ctrl.parmL",
+        "Description": "Контроль тока",
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "1",
+            "Description": "State.K"
+          },
+          {
+            "Value": "2",
+            "Description": "State.T"
+          },
+          {
+            "Value": "4",
+            "Description": "State.I"
+          },
+          {
+            "Value": "8",
+            "Description": "State.WS"
+          }
+        ]
+      },
+      {
+        "Start": 10,
+        "Length": 4,
+        "PropertyCode": "Ctrl.minL",
+        "Description": "Минимальное значение выбранного параметра из левой группы",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 14,
+        "Length": 4,
+        "PropertyCode": "Ctrl.maxL",
+        "Description": "Максимальное значение выбранного параметра из левой группы",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 18,
+        "Length": 4,
+        "PropertyCode": "Ctrl.minR",
+        "Description": "Минимальное значение выбранного параметра из правой группы",
+        "PropertyType": "number"
+      },
+      {
+        "Start": 22,
+        "Length": 4,
+        "PropertyCode": "Ctrl.maxR",
+        "Description": "Максимальное значение выбранного параметра из правой группы",
+        "PropertyType": "number"
+      },
+
+      {
+        "Start": 26,
+        "Length": 2,
+        "PropertyCode": "State.wireDiam",
+        "Description": "Диаметр сварочной проволоки",
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "00",
+            "Description": "0.8mm"
+          },
+          {
+            "Value": "01",
+            "Description": "1.0mm"
+          },
+          {
+            "Value": "02",
+            "Description": "1.2mm"
+          },
+          {
+            "Value": "04",
+            "Description": "1.6mm"
+          },
+         {
+            "Value": "FF",
+          "Description": "*"
+         }
+        ]
+      },
+
+
+      {
+        "Start": 28,
+        "Length": 2,
+        "PropertyCode": "State.material",
+        "Description": "Материал сварочной проволоки",
+        "PropertyType": "enum",
+      "Enums": [
+          {
+            "Value": "01",
+            "Description": "co100_StNU"
+          },
+          {
+            "Value": "00",
+            "Description": "ar82_co18_StNU"
+          },
+          {
+            "Value": "05",
+            "Description": "ar97_co3_X18H8"
+          },
+          {
+            "Value": "04",
+            "Description": "ar97_co3_X18H9"
+          },
+          {
+            "Value": "0D",
+            "Description": "ar100_BrAl9"
+          },
+          {
+            "Value": "0E",
+            "Description": "ar100_BtSi3"
+          },
+          {
+            "Value": "0A",
+            "Description": "ar100_AMz"
+          },
+          {
+            "Value": "09",
+            "Description": "ar100_AMg"
+          },
+          {
+            "Value": "08",
+            "Description": "ar100_Al99"
+          },
+          {
+            "Value": "11",
+            "Description": "Dop1"
+          },
+          {
+            "Value": "13",
+            "Description": "Dop2"
+          },
+          {
+            "Value": "03",
+            "Description": "Dop3"
+          },
+          {
+            "Value": "0f",
+            "Description": "Dop4"
+          },
+         {
+            "Value": "FF",
+           "Description": "*"
+         }
+        ]
+      },
+      {
+        "Start": 30,
+        "Length": 2,
+        "PropertyCode": "State.torch",
+        "Description": "Режим горелки",
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "00",
+            "Description": "2 - cycle"
+          },
+          {
+            "Value": "01",
+            "Description": "4 - cycle"
+          },
+          {
+            "Value": "02",
+            "Description": "4 - cycle special"
+          },
+          {
+            "Value": "03",
+            "Description": "dot"
+          },
+          {
+            "Value": "FF",
+            "Description": "*"
+          }
+        ]
+      },
+      {
+        "Start": 32,
+        "Length": 2,
+        "PropertyCode": "State.wType",
+        "Description": "Режим сварки",
+        "PropertyType": "enum",
+       "Enums": [
+          {
+            "Value": "01",
+            "Description": "P-MIG"
+          },
+          {
+            "Value": "02",
+            "Description": "MIG"
+          },
+          {
+            "Value": "05",
+            "Description": "MMA"
+          },
+          {
+            "Value": "06",
+            "Description": "TIG"
+          },
+          {
+            "Value": "07",
+            "Description": "CAC-A"
+          },
+          {
+            "Value": "FF",
+            "Description": "*"
+          }
+        ]
+      },
+      {
+        "Start": 34,
+        "Length": 4,
+        "PropertyCode": "Ctrl.minLind",
+        "Description": "Минимальное значение индуктивности",
+        "PropertyType": "range_min",
+        "RangeSource": "State.L"
+      },
+      {
+        "Start": 38,
+        "Length": 4,
+        "PropertyCode": "Ctrl.maxLind",
+        "Description": "Максимальное значение индуктивности",
+        "PropertyType": "range_max",
+        "RangeSource": "State.L"
+      },
+
+      {
+        "Start": 42,
+        "Length": 4,
+        "PropertyCode": "Ctrl.minS",
+        "Description": "Минимальная скорость горелки",
+        "PropertyType": "range_min",
+        "RangeSource": "State.S"
+      },
+      {
+        "Start": 46,
+        "Length": 4,
+        "PropertyCode": "Ctrl.maxS",
+        "Description": "Максимальная скорость горелки",
+        "PropertyType": "range_max",
+        "RangeSource": "State.S"
+      },
+      {
+        "Start": 50,
+        "Length": 4,
+        "PropertyCode": "Ctrl.minDS",
+        "Description": "Минимальное значение капли",
+        "PropertyType": "range_min",
+        "RangeSource": "State.DS"
+      },
+      {
+        "Start": 54,
+        "Length": 4,
+        "PropertyCode": "Ctrl.maxDS",
+        "Description": "Максимальное значение капли",
+        "PropertyType": "range_max",
+        "RangeSource": "State.DS"
+      },
+      {
+        "Start": 58,
+        "Length": 4,
+        "PropertyCode": "Ctrl.minArcF",
+        "Description": "Минимальное значение капли",
+        "PropertyType": "range_min",
+        "RangeSource": "State.ArcF"
+      },
+      {
+        "Start": 62,
+        "Length": 4,
+        "PropertyCode": "Ctrl.maxArcF",
+        "Description": "Максимальное значение капли",
+        "PropertyType": "range_max",
+        "RangeSource": "State.ArcF"
+      },
+      {
+        "Start": 66,
+        "Length": 2,
+        "PropertyCode": "CRC",
+        "Description": "CRC-8"
+      },
+/*
+      {
+        "Start": 66,
+        "Length": 4,
+       "Required": true,
+        "PropertyCode": "Ctrl.testNb",
+        "Description": "Digit",
+        "PropertyType": "number"
+      },
+*/
+    ]
+  },
+
+  "Presentation": {
+    "Properties": [
+
+      {
+
+        // Left number: Cathet 
+        "PropertyCode": "State.Left",
+        "Display": "text",
+        "Offset": {
+          "X": 200,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+          "NumberMultiplier": 0.1,
+         "NumberDigits":1
+        },
+        "Color": "#ff8100",
+      // "ConditionsRule": "AND",
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmL",
+            "Operator": "e",
+           "Value": "0"
+          },
+          {
+            "PropertyCode": "State.state",
+            "Operator": "ne",
+            "Value": "4"
+          }
+        ]
+      },
+/*
+      {
+        // Left number: Thickness 
+        "PropertyCode": "State.Left",
+        "Display": "text",
+        "Offset": {
+          "X": 200,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+          "NumberMultiplier": 0.1,
+          "NumberDigits":1
+        },
+        "Color": "#ff8100",
+        "Conditions": [
+          {
+           "PropertyCode": "State.parmL",
+           "Operator": "e",
+            "Value": "0"
+          }
+        ]
+      },
+*/
+      {
+        // Left number: Current 
+        "PropertyCode": "State.Left",
+        "Display": "text",
+        "Offset": {
+          "X": 200,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+        " NumberMultiplier": 1,
+         " NumberDigits": 0
+        },
+        "Color": "#ff8100",
+    //  "ConditionsRule": "OR",
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmL",
+            "Operator": "e",
+            "Value": "4"
+          },
+         {
+            "PropertyCode": "State.state",
+            "Operator": "ne",
+            "Value": "4"
+          } 
+       ]
+      },
+      {
+        // Left number:  Arcforce
+        "PropertyCode": "State.Left",
+        "Display": "text",
+        "Offset": {
+          "X": 200,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+        " NumberMultiplier": 1,
+         " NumberDigits": 0
+        },
+        "Color": "#ff8100",
+    //  "ConditionsRule": "OR",
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmL",
+            "Operator": "e",
+            "Value": "8"
+          },
+         {
+            "PropertyCode": "State.state",
+            "Operator": "ne",
+            "Value": "4"
+          },
+          {
+          "PropertyCode": "State.wType",
+           "Operator": "e",
+           "Value": "05"
+         }
+       ]
+      },
+    {
+        // Left number:  Current in TIG
+        "PropertyCode": "State.Left",
+        "Display": "text",
+        "Offset": {
+          "X": 200,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+        " NumberMultiplier": 1,
+         " NumberDigits": 0
+        },
+        "Color": "#ff8100",
+    //  "ConditionsRule": "OR",
+        "Conditions": [
+         {
+            "PropertyCode": "State.state",
+            "Operator": "ne",
+            "Value": "4"
+          },
+          {
+          "PropertyCode": "State.wType",
+           "Operator": "e",
+           "Value": "06"
+         }
+       ]
+      },
+    {
+        // Left number:  Current in CAS
+        "PropertyCode": "State.Left",
+        "Display": "text",
+        "Offset": {
+          "X": 200,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+        " NumberMultiplier": 1,
+         " NumberDigits": 0
+        },
+        "Color": "#ff8100",
+    //  "ConditionsRule": "OR",
+        "Conditions": [
+         {
+            "PropertyCode": "State.state",
+            "Operator": "ne",
+            "Value": "4"
+          },
+          {
+          "PropertyCode": "State.wType",
+           "Operator": "e",
+           "Value": "07"
+         }
+       ]
+      },
+      {
+        // Left Error
+        "ConstantText":"E",
+        "Display": "text",
+        "Offset": {
+          "X": 200,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+        },
+        "Color": "#ff8100",
+        "Conditions": [
+          {
+            "PropertyCode": "State.state",
+            "Operator": "e",
+            "Value": "4"
+          }
+       ]
+      },
+      {
+        // Left Error number
+        "PropertyCode": "State.errors",
+        "Display": "text",
+        "Offset": {
+          "X": 230,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+        " NumberMultiplier": 1,
+         " NumberDigits": 0
+        },
+        "Color": "#ff8100",
+        "Conditions": [
+          {
+            "PropertyCode": "State.state",
+            "Operator": "e",
+            "Value": "4"
+          }
+       ]
+      },
+      {
+        // Left number: Wire speed 
+        "PropertyCode": "State.Left",
+        "Display": "text",
+        "Offset": {
+          "X": 200,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+          "NumberMultiplier": 0.1,
+        "NumberDigits":1
+        },
+        "Color": "#ff8100",
+       "ConditionsRule": "AND",
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmL",
+            "Operator": "e",
+            "Value": "2"
+          },
+          {
+            "PropertyCode": "State.state",
+            "Operator": "ne",
+            "Value": "4"
+          }
+        ]
+      },
+     {
+        /* Left number: Inductance in MIG mode only */
+        "PropertyCode": "State.L",
+        "Display": "text",
+        "Offset": {
+          "X": 200,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+         //"NumberMultiplier": 0.1,
+         "NumberDigits": 1
+        },
+        "Color": "#ff8100",
+      // "ConditionsRule": "AND",
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmL",
+            "Operator": "e",
+            "Value": "8"
+          },
+          {
+          "PropertyCode": "State.wType",
+           "Operator": "e",
+           "Value": "02"
+         },
+          {
+            "PropertyCode": "State.state",
+            "Operator": "ne",
+            "Value": "4"
+          }
+        ]
+      },
+      {
+        /* Left number: DropSize in PMIG mode only */
+        "PropertyCode": "State.DS",
+        "Display": "text",
+        "Offset": {
+          "X": 200,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+         //"NumberMultiplier": 0.1,
+         "NumberDigits": 1
+        },
+        "Color": "#ff8100",
+      // "ConditionsRule": "AND",
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmL",
+            "Operator": "e",
+            "Value": "8"
+          },
+          {
+          "PropertyCode": "State.wType",
+           "Operator": "e",
+           "Value": "01"
+         },
+          {
+            "PropertyCode": "State.state",
+            "Operator": "ne",
+            "Value": "4"
+          }
+        ]
+      },
+      {
+        // Right Error
+        "ConstantText":"E",
+        "Display": "text",
+        "Offset": {
+          "X": 350,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+        },
+        "Color": "#ff8100",
+        "Conditions": [
+          {
+            "PropertyCode": "State.state",
+            "Operator": "e",
+            "Value": "4"
+          }
+       ]
+      },
+      {
+        // Right Error number
+        "PropertyCode": "State.errors",
+        "Display": "text",
+        "Offset": {
+          "X": 380,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+        " NumberMultiplier": 1,
+         " NumberDigits": 0
+        },
+        "Color": "#ff8100",
+        "Conditions": [
+          {
+            "PropertyCode": "State.state",
+            "Operator": "e",
+            "Value": "4"
+          }
+       ]
+      },
+      {
+        /* Right number: Arc elasticity */
+        "PropertyCode": "State.Flex",
+        "Display": "text",
+        "Offset": {
+          "X": 350,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+         "NumberDigits": 1
+        },
+        "Color": "#ff8100",
+       "ConditionsRule": "AND",
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmR",
+            "Operator": "e",
+            "Value": "2"
+          },
+          {
+            "PropertyCode": "State.state",
+            "Operator": "ne",
+            "Value": "4"
+          }
+        ]
+      },
+
+      {
+        //Right number: Voltage 
+        "PropertyCode": "State.Right",
+        "Display": "text",
+        "Offset": {
+          "X": 350,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+         "NumberMultiplier": 0.1,
+        "NumberDigits":1
+        },
+        "Color": "#ff8100",
+       "ConditionsRule": "AND",
+        "Conditions": [
+         {
+           "PropertyCode": "State.parmR",
+           "Operator": "e",
+           "Value":"4"
+         },
+          {
+            "PropertyCode": "State.state",
+            "Operator": "ne",
+            "Value": "4"
+          }
+        ]
+      },
+
+      {
+        //Right number: Torch speed 
+        "PropertyCode": "State.S",
+        "Display": "text",
+        "Offset": {
+          "X": 350,
+          "Y": 47
+        },
+        "TextStyle": {
+          "FontSize": 50,
+        "NumberDigits": 0
+        },
+        "Color": "#ff8100",
+      // "ConditionsRule": "AND",
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmR",
+            "Operator": "e",
+            "Value": "0"
+          },
+          {
+            "PropertyCode": "State.state",
+            "Operator": "ne",
+            "Value": "4"
+          }
+        ]
+      },
+
+      {
+        /* Left: Leds */
+        "PropertyCode": "State.parmL",
+        "Display": "led",
+        "Offset": {
+          "X": 190,
+          "Y": 118
+        },
+        "LedStyle": {
+          "Width": 12,
+          "Height": 12,
+          "Radius": 6
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmL",
+            "Operator": "e",
+            "Value": "0"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "PropertyCode": "State.parmL",
+        "Display": "led",
+        "Offset": {
+          "X": 212,
+          "Y": 118
+        },
+        "LedStyle": {
+          "Width": 12,
+          "Height": 12,
+          "Radius": 6
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmL",
+            "Operator": "e",
+            "Value": "999"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "PropertyCode": "State.parmL",
+        "Display": "led",
+        "Offset": {
+          "X": 233,
+          "Y": 118
+        },
+        "LedStyle": {
+          "Width": 12,
+          "Height": 12,
+          "Radius": 6
+        },
+        "ConditionsRule": "OR",
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmL",
+            "Operator": "e",
+            "Value": "4"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "e",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "e",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "e",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "PropertyCode": "State.parmL",
+        "Display": "led",
+        "Offset": {
+          "X": 255,
+          "Y": 118
+        },
+        "LedStyle": {
+          "Width": 12,
+          "Height": 12,
+          "Radius": 6
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmL",
+            "Operator": "e",
+            "Value": "2"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "PropertyCode": "State.parmL",
+        "Display": "led",
+        "Offset": {
+          "X": 276,
+          "Y": 118
+        },
+        "LedStyle": {
+          "Width": 12,
+          "Height": 12,
+          "Radius": 6
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmL",
+            "Operator": "e",
+            "Value": "8"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+
+      // Right leds
+      {
+        "PropertyCode": "State.parmR",
+        "Display": "led",
+        "Offset": {
+          "X": 338,
+          "Y": 118
+        },
+        "LedStyle": {
+          "Width": 12,
+          "Height": 12,
+          "Radius": 6
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmR",
+            "Operator": "e",
+            "Value": "1000"
+          }
+        ]
+      },
+      {
+        "PropertyCode": "State.parmR",
+        "Display": "led",
+        "Offset": {
+          "X": 359,
+          "Y": 118
+        },
+        "LedStyle": {
+          "Width": 12,
+          "Height": 12,
+          "Radius": 6
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmR",
+            "Operator": "e",
+            "Value": "2"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "PropertyCode": "State.parmR",
+        "Display": "led",
+        "Offset": {
+          "X": 380,
+          "Y": 118
+        },
+        "LedStyle": {
+          "Width": 12,
+          "Height": 12,
+          "Radius": 6
+        },
+        "ConditionsRule": "OR",
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmR",
+            "Operator": "e",
+            "Value": "4"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "e",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "e",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "e",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "PropertyCode": "State.parmR",
+        "Display": "led",
+        "Offset": {
+          "X": 401,
+          "Y": 118
+        },
+        "LedStyle": {
+          "Width": 12,
+          "Height": 12,
+          "Radius": 6
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmR",
+            "Operator": "e",
+            "Value": "0"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "PropertyCode": "State.parmR",
+        "Display": "led",
+        "Offset": {
+          "X": 423,
+          "Y": 118
+        },
+        "LedStyle": {
+          "Width": 12,
+          "Height": 12,
+          "Radius": 6
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.parmR",
+            "Operator": "e",
+            "Value": "9999"
+          }
+        ]
+      },
+
+      // Wire diameter
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 187,
+          "Y": 195
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.wireDiam",
+            "Operator": "e",
+            "Value": "00"
+          },         
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 187,
+          "Y": 212
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.wireDiam",
+            "Operator": "e",
+            "Value": "01"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 187,
+          "Y": 230
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.wireDiam",
+            "Operator": "e",
+            "Value": "02"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 187,
+          "Y": 247
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.wireDiam",
+            "Operator": "e",
+            "Value": "04"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+///////////Material
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 323,
+          "Y": 190
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.material",
+            "Operator": "e",
+            "Value": "01"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 323,
+          "Y": 204
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.material",
+            "Operator": "e",
+            "Value": "00"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 323,
+          "Y": 217
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.material",
+            "Operator": "e",
+            "Value": "05"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 323,
+          "Y": 229
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.material",
+            "Operator": "e",
+            "Value": "04"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 323,
+          "Y": 242
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.material",
+            "Operator": "e",
+            "Value": "0D"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 323,
+          "Y": 255
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.material",
+            "Operator": "e",
+            "Value": "0E"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 361,
+          "Y": 190
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.material",
+            "Operator": "e",
+            "Value": "0A"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 361,
+          "Y": 204
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.material",
+            "Operator": "e",
+            "Value": "09"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 361,
+          "Y": 217
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.material",
+            "Operator": "e",
+            "Value": "08"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 361,
+          "Y": 229
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.material",
+            "Operator": "e",
+            "Value": "11"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 361,
+          "Y": 242
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.material",
+            "Operator": "e",
+            "Value": "13"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 361,
+          "Y": 255
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.material",
+            "Operator": "e",
+            "Value": "03"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 495,
+          "Y": 195
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.torch",
+            "Operator": "e",
+            "Value": "00"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 495,
+          "Y": 212
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.torch",
+            "Operator": "e",
+            "Value": "01"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 495,
+          "Y": 230
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.torch",
+            "Operator": "e",
+            "Value": "02"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 495,
+          "Y": 247
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.torch",
+            "Operator": "e",
+            "Value": "03"
+          },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "05"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "06"
+         },
+         {
+          "PropertyCode": "State.wType",
+           "Operator": "ne",
+           "Value": "07"
+         }
+        ]
+      },
+/////////////////////////
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 565,
+          "Y": 191
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.wType",
+            "Operator": "e",
+            "Value": "01"
+          }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 565,
+          "Y": 206
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.wType",
+            "Operator": "e",
+            "Value": "02"
+          }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 565,
+          "Y": 220
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.wType",
+            "Operator": "e",
+            "Value": "05"
+          }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 565,
+          "Y": 234
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.wType",
+            "Operator": "e",
+            "Value": "06"
+          }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 565,
+          "Y": 249
+        },
+        "LedStyle": {
+          "Width": 10,
+          "Height": 10,
+          "Radius": 5
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.wType",
+            "Operator": "e",
+            "Value": "07"
+          }
+        ]
+      }
+    ]
+  },
+
+  "Settings": {
+    "WorkingTimeBeforeService": 160,
+    // "NotifyHoursBeforeService": 20,
+     "Efficiency": 0.95,
+      "StandbyPower": 20
+  },
+
+  "PropertyLimits": {
+    "Limits": [
+      {
+        "PropertyCode": "State.K",
+        "Description": "Размер катета",
+        "MinValue": 0.8,
+        "MaxValue": 5,
+       "Step": 0.1
+      },
+      {
+        "PropertyCode": "State.T",
+        "Description": "Толщина детали",
+        "MinValue": 0.8,
+        "MaxValue": 25,
+      "Step": 0.1
+      },
+      {
+        "PropertyCode": "State.I",
+        "Description": "Ток",
+        "MinValue": 8,
+        "MaxValue": 500
+      },
+      {
+        "PropertyCode": "State.WS",
+        "Description": "Скорость",
+        "MinValue": 0.8,
+        "MaxValue": 25,
+      "Step": 0.1
+      },
+      {
+        "PropertyCode": "State.L",
+        "Description": "Индуктивность",
+        "MinValue": -5,
+        "MaxValue": 5,
+         "Step": 0.1
+      },
+      {
+        "PropertyCode": "State.Flex",
+        "Description": "Длина дуги",
+        "MinValue": -5,
+        "MaxValue": 5,
+        "Step": 0.1
+      },
+      {
+        "PropertyCode": "State.U",
+        "Description": "Напряжение",
+        "MinValue": 8,
+        "MaxValue": 50,
+        "Step": 0.1
+      },
+      {
+        "PropertyCode": "State.S",
+        "Description": "Скорость движения горелки (робота)",
+        "MinValue": 20,
+        "MaxValue": 199
+      },
+      {
+        "PropertyCode": "State.DS",
+        "Description": "Размер капли в режиме PMIG",
+        "MinValue": -5,
+        "MaxValue": 5,
+        "Step": 0.1
+      },
+      {
+        "PropertyCode": "State.ArcF",
+        "Description": "Форсаж дуги в режиме ММА",
+        "MinValue": 0,
+        "MaxValue": 100,
+      },
+/*
+      {
+        "PropertyCode": "Ctrl.testNb",
+        "Description": "test digit",
+        "MinValue": 0,
+        "MaxValue": 1000,
+       "Step": 1
+      },
+*/
+    ]
+  },
+
+
+  "ModeDefinitions": {
+    "WeldingMode": {
+      "ConditionNegative": false,
+      "Conditions": [
+        {
+          "PropertyCode": "State.state",
+          "Operator": "e",
+          "Value": "2"
+        }
+      ]
+    },
+    "ErrorMode": {
+      "ConditionNegative": false,
+      "Conditions": [
+        {
+          "PropertyCode": "State.state",
+          "Operator": "e",
+          "Value": "4"
+        }
+      ]
+    },
+
+    "LimitedMode": {
+      //  "ConditionNegative": false,
+      "Conditions": [
+        {
+          "PropertyCode": "State.ctrl",
+          "Operator": "and",
+          "Value": 2
+        }
+      ]
+    },
+
+    "BlockMode": {
+      //  "ConditionNegative": false,
+      "Conditions": [
+        {
+          "PropertyCode": "State.ctrl",
+          "Operator": "and",
+          "Value": 5
+        },
+      ]
+    },
+  },
+
+  "AlertDefinitions": [
+    {
+      "Message": "Alert Test 1",
+      "Conditions": [
+        {
+          "PropertyCode": "State.I",
+          "Operator": "gt",
+          "Value":  1
+        }
+      ]
+    }
+  ]
+
+}

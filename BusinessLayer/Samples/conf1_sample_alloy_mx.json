@@ -1,0 +1,2788 @@
+﻿{
+  Inbound: {
+    Delimiter: "\r\n",
+    DataPropertiesOffset: 14,
+    Header: [
+      {
+        Start: 0,
+        Length: 1,
+        Required: true,
+        ConstantValue: ":"
+      },
+      {
+        Start: 1,
+        Length: 12,
+        PropertyCode: "MACAddress",
+        Description: "MAC Address",
+        ShowInSummary: true
+      },
+      {
+        Start: 13,
+        Length: 1,
+        Required: true,
+        ConstantValue: ";"
+      }
+    ],
+    Body: [
+      {
+        Start: 0,
+        Length: 2,
+        PropertyCode: "MODEL",
+        Description: "Модель аппарата",
+        PropertyType: "number",
+        // ShowInSummary: true
+      },
+      /*
+  {
+    Start: 2,
+    Length: 2,
+        "PropertyCode": "State.ctrl",
+        "Description": "Вид управления",
+        ShowInSummary: true,
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "01",
+            "Description": "Free"
+          },
+          {
+            "Value": "02",
+            "Description": "Limited"
+          },
+          {
+            "Value": "05",
+            "Description": "Block"
+          }
+        ]
+      },
+*/
+      {
+        Start: 4,
+        Length: 2,
+        PropertyCode: "VERSION",
+        Description: "Версия прошивки",
+        PropertyType: "number"
+      },
+      {
+        Start: 6,
+        Length: 4,
+        PropertyCode: "State.sFlags",
+        "Description": "Флаги состояния",
+        "ShowInSummary": true,
+        PropertyType: "number",
+        "Enums": [
+          {
+            "Value": 1,
+            "Description": "connPUtoPAN"
+          },
+          {
+            "Value": 2,
+            "Description": "connPMtoPAN"
+          },
+          {
+            "Value": 4,
+            "Description": "connWTtoPAN"
+          },
+          {
+            "Value": 8,
+            "Description": "connPMtoPU"
+          },
+          {
+            "Value": 16,
+            "Description": "connRFIDtoPU"
+          },
+          {
+            "Value": 32,
+            "Description": "connSCANtoPU"
+          },
+          {
+            "Value": 64,
+            "Description": "stWelding"
+          },
+          {
+            "Value": 128,
+            "Description": "stHeat"
+          },
+          {
+            "Value": 256,
+            "Description": "stWire"
+          },
+          {
+            "Value": 512,
+            "Description": "stGas"
+          },
+          {
+            "Value": 1024,
+            "Description": "sigProgLoad"
+          },
+          {
+            "Value": 2048,
+            "Description": "connIDtoPAN"
+          },
+          {
+            "Value": 4096,
+            "Description": "sigDisSaveProg"
+          },
+          {
+            "Value": 8128,
+            "Description": "sigTypeCtrl_0"
+          },
+          {
+            "Value": 16384,
+            "Description": "sigTypeCtrl_1"
+          },
+          {
+            "Value": 32768,
+            "Description": "sigTypeCtrl_2"
+          }
+        ]
+      },
+      {
+        Start: 10,
+        Length: 2,
+        PropertyCode: "State.pFlags",
+        "Description": "Флаги режимов",
+        "ShowInSummary": true,
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": 1,
+            "Description": "ShowA_Mmin"
+          },
+          {
+            "Value": 2,
+            "Description": "MMA_MIGMAG"
+          },
+          {
+            "Value": 4,
+            "Description": "Hand_Synerg"
+          },
+          {
+            "Value": 8,
+            "Description": "WireP_C"
+          },
+          {
+            "Value": 16,
+            "Description": "G_Mode_0"
+          },
+          {
+            "Value": 32,
+            "Description": "G_Mode_1"
+          },
+          {
+            "Value": 64,
+            "Description": "WireDiam_0"
+          },
+          {
+            "Value": 128,
+            "Description": "WireDiam_1"
+          }
+        ]
+      },
+      {
+        Start: 12,
+        Length: 2,
+        PropertyCode: "State.errFlags",
+        Description: "Флаги ошибок",
+        "ShowInSummary": true,
+        PropertyType: "number"
+      },
+      {
+        Start: 14,
+        Length: 2,
+        PropertyCode: "State.WPSProg",
+        Description: "Номер программы",
+        PropertyType: "number",
+        ShowInSummary: true
+      },
+      {
+        Start: 16,
+        Length: 4,
+        PropertyCode: "State.Ireal",
+        Description: "Ток дуги",
+        PropertyType: "number",
+        Unit: {
+          UnitCode: "A",
+          Multiplier: 1
+        },
+        ShowInSummary: true
+      },
+      {
+        Start: 20,
+        Length: 4,
+        PropertyCode: "State.Ureal",
+        Description: "Напряжение дуги",
+        PropertyType: "number",
+        Unit: {
+          UnitCode: "В",
+          Multiplier: 0.1
+        },
+        ShowInSummary: true
+      },
+      {
+        Start: 24,
+        Length: 4,
+        PropertyCode: "State.Imigmag",
+        Description: "Ток в MIG/MAG",
+        PropertyType: "number",
+        Unit: {
+          UnitCode: "A",
+          Multiplier: 1
+        },
+        ShowInSummary: true
+      },
+      {
+        Start: 28,
+        Length: 4,
+        PropertyCode: "State.Umigmag",
+        Description: "Напряжение в MIG/MAG",
+        PropertyType: "number",
+        Unit: {
+          UnitCode: "В",
+          Multiplier: 0.1
+        },
+        ShowInSummary: true
+      },
+      {
+        Start: 32,
+        Length: 4,
+        PropertyCode: "State.Imma",
+        Description: "Ток в MMA",
+        PropertyType: "number",
+        Unit: {
+          UnitCode: "А",
+          Multiplier: 1
+        },
+        ShowInSummary: true
+      },
+      {
+        Start: 36,
+        Length: 4,
+        PropertyCode: "State.Lmma",
+        Description: "Индуктивность в MMA",
+        PropertyType: "number",
+        Unit: {
+          Multiplier: 1
+        },
+        ShowInSummary: true
+      },
+      {
+        Start: 40,
+        Length: 4,
+        PropertyCode: "State.Izk",
+        Description: "Ток заварки кратера",
+        PropertyType: "number",
+        Unit: {
+          UnitCode: "А",
+          Multiplier: 1
+        },
+        ShowInSummary: true
+      },
+      {
+        Start: 44,
+        Length: 4,
+        PropertyCode: "State.Uzk",
+        Description: "Напряжение заварки кратера",
+        PropertyType: "number",
+        Unit: {
+          UnitCode: "В",
+          Multiplier: 0.1
+        },
+        ShowInSummary: true
+      },
+      {
+        Start: 48,
+        Length: 4,
+        PropertyCode: "State.Tpw",
+        Description: "Время точечной сварки",
+        PropertyType: "number",
+        Unit: {
+          UnitCode: "с",
+          Multiplier: 0.1
+        },
+        ShowInSummary: true
+      },
+      {
+        Start: 52,
+        Length: 4,
+        PropertyCode: "State.Lmigmag",
+        Description: "Индуктивность  MIG/MAG",
+        PropertyType: "number",
+        Unit: {
+          UnitCode: "",
+          Multiplier: 1
+        },
+        ShowInSummary: true
+      },
+      {
+        "Start": 56,
+        "Length": 10,
+        "PropertyCode": "rfid",
+        "Description": "Данные сканнера RFID",
+        "PropertyType": "string"
+
+      },
+      /*
+      {
+        "Start": 66,
+        "Length": 14,
+        "PropertyCode": "scan",
+        "Description": "Данные сканнера",
+        "PropertyType": "string",
+       ShowInSummary: true
+      },
+*/
+      {
+        "Start": 66,
+        "Length": 2,
+        "PropertyCode": "digit1",
+        "Description": "Digit1",
+        "PropertyType": "enum",
+        // ShowInSummary: true
+      },
+      {
+        "Start": 68,
+        "Length": 2,
+        "PropertyCode": "digit2",
+        "Description": "Digit2",
+        "PropertyType": "enum",
+        // ShowInSummary: true
+      },
+      {
+        "Start": 70,
+        "Length": 2,
+        "PropertyCode": "digit3",
+        "Description": "Digit3",
+        "PropertyType": "enum",
+        // ShowInSummary: true
+      },
+      {
+        "Start": 72,
+        "Length": 2,
+        "PropertyCode": "digit4",
+        "Description": "Digit4",
+        "PropertyType": "enum",
+        // ShowInSummary: true
+      },
+      {
+        "Start": 74,
+        "Length": 2,
+        "PropertyCode": "digit5",
+        "Description": "Digit5",
+        "PropertyType": "enum",
+        // ShowInSummary: true
+      },
+      {
+        "Start": 76,
+        "Length": 2,
+        "PropertyCode": "digit6",
+        "Description": "Digit6",
+        "PropertyType": "enum",
+        // ShowInSummary: true
+      },
+      {
+        "Start": 78,
+        "Length": 2,
+        "PropertyCode": "digit7",
+        "Description": "Digit7",
+        "PropertyType": "enum",
+        // ShowInSummary: true
+      },
+      {
+        Start: 80,
+        Length: 2,
+        PropertyCode: "State.gasFlow",
+        Description: "Состояния датчика газа",
+        PropertyType: "number",
+        Unit: {
+          UnitCode: "",
+          //Multiplier: 0.1
+        },
+        //ShowInSummary: true
+      },
+
+      {
+        Start: 82,
+        Length: 4,
+        PropertyCode: "State.turnMotor",
+        Description: "Состояния двигателя",
+        PropertyType: "number",
+        Unit: {
+          UnitCode: "",
+          //Multiplier: 0.1
+        },
+        // ShowInSummary: true
+      },
+      {
+        Start: 86,
+        Length: 2,
+        PropertyCode: "CRC",
+        Description: "CRC-8"
+      }
+    ]
+  },
+  ////////////////////////////////////////////////////////////////////
+  "Outbound": {
+    "Delimiter": "\r\n",
+    "DataPropertiesOffset": 1,
+    "Header": [
+      {
+        "Start": 0,
+        "Length": 1,
+        "Required": true,
+        "ConstantValue": ":"
+      },
+      {
+        "Start": 1,
+        "Length": 12,
+        "PropertyCode": "MACAddress",
+        "Description": "MAC Address"
+      },
+      {
+        "Start": 13,
+        "Length": 1,
+        "Required": true,
+        "ConstantValue": ";"
+      }
+    ],
+    "Body": [
+      // Model
+      {
+        "Start": 0,
+        "Length": 2,
+        "Required": true,
+        "ConstantValue": "0A"
+      },
+      // CmdType
+      {
+        "Start": 2,
+        "Length": 2,
+        "Required": true,
+        "ConstantValue": "01"
+      },
+      // CmdVers
+      {
+        "Start": 4,
+        "Length": 2,
+        "Required": true,
+        "ConstantValue": "01"
+      },
+      {
+        "Start": 6,
+        "Length": 2,
+        "PropertyCode": "State.ctrl",
+        "Description": "Вид управления",
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "01",
+            "Description": "Free"
+          },
+          {
+            "Value": "02",
+            "Description": "Limited"
+          },
+          {
+            "Value": "05",
+            "Description": "Block"
+          }
+        ]
+      },
+      {
+        "Start": 8,
+        "Length": 2,
+        "PropertyCode": "State.pFlags_diam",
+        "Description": "Диаметр проволоки",
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "00",
+            "Description": "1,0 mm"
+          },
+          {
+            "Value": "80",
+            "Description": "1,2 mm"
+          },
+          {
+            "Value": "C0",
+            "Description": "1,6 mm"
+          }
+        ]
+      },
+      {
+        "Start": 8,
+        "Length": 2,
+        "PropertyCode": "State.pFlags_pow",
+        "Description": "Тип проволоки",
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "00",
+            "Description": "Сплошная"
+          },
+          {
+            "Value": "08",
+            "Description": "Порошковая"
+          }
+        ]
+      },
+      {
+        "Start": 8,
+        "Length": 2,
+        "PropertyCode": "State.pFlags_Tmode",
+        "Description": "Режим горелки",
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "00",
+            "Description": "Двухтактный"
+          },
+          {
+            "Value": "20",
+            "Description": "Четырехтактный"
+          },
+          {
+            "Value": "10",
+            "Description": "Точечный"
+          }
+        ]
+      },
+      {
+        "Start": 8,
+        "Length": 2,
+        "PropertyCode": "State.pFlags_syn",
+        "Description": "Управление напряжением",
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "04",
+            "Description": "Ручное"
+          },
+          {
+            "Value": "00",
+            "Description": "Синергетика"
+          }
+        ]
+      },
+
+      {
+        "Start": 8,
+        "Length": 2,
+        "PropertyCode": "State.pFlags_Wmode",
+        "Description": "Режим сварки",
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "00",
+            "Description": "MIGMAG"
+          },
+          {
+            "Value": "02",
+            "Description": "MMA"
+          }
+        ]
+      },
+      /*
+      {
+        "Start": 8,
+        "Length": 2,
+       "PropertyCode": "State.pFlags_modeA",
+        "Description": "Режим индикатора",
+        "PropertyType": "enum",
+        "Enums": [
+          {
+            "Value": "00",
+            "Description": "Ток"
+          },
+          {
+            "Value": "01",
+            "Description": "Скорость проволоки"
+          }
+        ]
+      },
+*/
+
+      {
+        "Start": 62,
+        "Length": 4,
+        "PropertyCode": "Ctrl.minImigmag",
+        "Description": "Минимальное значение",
+        "PropertyType": "range_min",
+        "RangeSource": "State.Imigmag"
+      },
+      {
+        "Start": 66,
+        "Length": 4,
+        "PropertyCode": "Ctrl.maxImigmag",
+        "Description": "Максимальное значение",
+        "PropertyType": "range_max",
+        "RangeSource": "State.Imigmag"
+      },
+
+      {
+        "Start": 70,
+        "Length": 4,
+        "PropertyCode": "Ctrl.minUmigmag",
+        "Description": "Минимальное значение",
+        "PropertyType": "range_min",
+        "RangeSource": "State.Umigmag"
+      },
+      {
+        "Start": 74,
+        "Length": 4,
+        "PropertyCode": "Ctrl.maxUmigmag",
+        "Description": "Максимальное значение",
+        "PropertyType": "range_max",
+        "RangeSource": "State.Umigmag"
+      },
+      {
+        "Start": 54,
+        "Length": 4,
+        "PropertyCode": "Ctrl.minLmigmag",
+        "Description": "Минимальное значение",
+        "PropertyType": "range_min",
+        "RangeSource": "State.Lmigmag"
+      },
+      {
+        "Start": 58,
+        "Length": 4,
+        "PropertyCode": "Ctrl.maxILmigmag",
+        "Description": "Максимальное значение",
+        "PropertyType": "range_max",
+        "RangeSource": "State.Lmigmag"
+      },
+
+
+      {
+        "Start": 14,
+        "Length": 4,
+        "PropertyCode": "Ctrl.minImma",
+        "Description": "Минимальное значение",
+        "PropertyType": "range_min",
+        "RangeSource": "State.Imma"
+      },
+      {
+        "Start": 18,
+        "Length": 4,
+        "PropertyCode": "Ctrl.maxIImma",
+        "Description": "Максимальное значение",
+        "PropertyType": "range_max",
+        "RangeSource": "State.Imma"
+      },
+      {
+        "Start": 22,
+        "Length": 4,
+        "PropertyCode": "Ctrl.minLmma",
+        "Description": "Минимальное значение",
+        "PropertyType": "range_min",
+        "RangeSource": "State.Lmma"
+      },
+      {
+        "Start": 26,
+        "Length": 4,
+        "PropertyCode": "Ctrl.maxILmma",
+        "Description": "Максимальное значение",
+        "PropertyType": "range_max",
+        "RangeSource": "State.Lmma"
+      },
+      {
+        "Start": 30,
+        "Length": 4,
+        "PropertyCode": "Ctrl.minTpw",
+        "Description": "Минимальное значение",
+        "PropertyType": "range_min",
+        "RangeSource": "State.Tpw"
+      },
+      {
+        "Start": 34,
+        "Length": 4,
+        "PropertyCode": "Ctrl.maxTpw",
+        "Description": "Максимальное значение",
+        "PropertyType": "range_max",
+        "RangeSource": "State.Tpw"
+      },
+      {
+        "Start": 38,
+        "Length": 4,
+        "PropertyCode": "Ctrl.minIzk",
+        "Description": "Минимальное значение",
+        "PropertyType": "range_min",
+        "RangeSource": "State.Izk"
+      },
+      {
+        "Start": 42,
+        "Length": 4,
+        "PropertyCode": "Ctrl.maxIzk",
+        "Description": "Максимальное значение",
+        "PropertyType": "range_max",
+        "RangeSource": "State.Izk"
+      },
+      {
+        "Start": 46,
+        "Length": 4,
+        "Required": true,
+        // "ConstantValue":  "0020"
+        "PropertyCode": "Ctrl.minUzk",
+        "Description": "Минимальное значение",
+        "PropertyType": "range_min",
+        "RangeSource": "State.Uzk"
+      },
+      {
+        "Start": 50,
+        "Length": 4,
+        "Required": true,
+        //  "ConstantValue":  "01F4"
+        "PropertyCode": "Ctrl.maxUzk",
+        "Description": "Максимальное значение",
+        "PropertyType": "range_max",
+        "RangeSource": "State.Uzk"
+      },
+
+
+      {
+        "Start": 10,
+        "Length": 2,
+        "PropertyCode": "Ctrl.minWPSProg",
+        "Description": "Минимальное значение",
+        "PropertyType": "range_min",
+        "RangeSource": "State.WPSProg"
+      },
+      {
+        "Start": 12,
+        "Length": 2,
+        "PropertyCode": "Ctrl.maxWPSProg",
+        "Description": "Максимальное значение",
+        "PropertyType": "range_max",
+        "RangeSource": "State.WPSProg"
+      },
+      {
+        "Start": 78,
+        "Length": 2,
+        "PropertyCode": "CRC",
+        "Description": "CRC-8"
+      }
+    ]
+  },
+
+  "Presentation": {
+    "Properties": [
+      ///////////////
+
+      {
+        //Right number: Voltage migmag
+        "PropertyCode": "State.Umigmag",
+        "Display": "text",
+        "Offset": {
+          "X": 343,
+          "Y": 116
+        },
+        "TextStyle": {
+          "FontSize": 55,
+          //"NumberMultiplier": 0.1,
+          "NumberDigits": 1
+        },
+        "Color": "#ff8100",
+        "Conditions": [
+          {
+            "ConditionNegative": true,
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          },
+          {
+            "ConditionNegative": true,
+            "PropertyCode": "State.sFlags",
+            "Operator": "and",
+            "Value": 64
+          }
+        ]
+      },
+      {
+        //Right number: Inductance mma
+        "PropertyCode": "State.Lmma",
+        "Display": "text",
+        "Offset": {
+          "X": 343,
+          "Y": 116
+        },
+        "TextStyle": {
+          "FontSize": 55
+        },
+        "Color": "#ff8100",
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": "2"
+          },
+          {
+            "ConditionNegative": true,
+            "PropertyCode": "State.sFlags",
+            "Operator": "and",
+            "Value": 64
+          }
+        ]
+      },
+      {
+        //Right number: Voltage welding
+        "PropertyCode": "State.Ureal",
+        "Display": "text",
+        "Offset": {
+          "X": 343,
+          "Y": 116
+        },
+        "TextStyle": {
+          "FontSize": 55,
+          //"NumberMultiplier": 0.1,
+          "NumberDigits": 1
+        },
+        "Color": "#ff8100",
+        "Conditions": [
+          {
+            "PropertyCode": "State.sFlags",
+            "Operator": "and",
+            "Value": 64
+          }
+        ]
+      },
+
+      {
+        // Left number: Current migmag
+        "PropertyCode": "State.Imigmag",
+        "Display": "text",
+        "Offset": {
+          "X": 215,
+          "Y": 116
+        },
+        "TextStyle": {
+          "FontSize": 55,
+          " NumberMultiplier": 1,
+          " NumberDigits": 0
+        },
+        "Color": "#ff8100",
+        "Conditions": [
+          {
+            "ConditionNegative": true,
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": "2"
+          },
+          {
+            "ConditionNegative": true,
+            "PropertyCode": "State.sFlags",
+            "Operator": "and",
+            "Value": 64
+          }
+        ]
+      },
+      {
+        // Left number: Current
+        "PropertyCode": "State.Imma",
+        "Display": "text",
+        "Offset": {
+          "X": 215,
+          "Y": 116
+        },
+        "TextStyle": {
+          "FontSize": 55,
+          " NumberMultiplier": 1,
+          " NumberDigits": 0
+        },
+        "Color": "#ff8100",
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": "2"
+          },
+          {
+            "ConditionNegative": true,
+            "PropertyCode": "State.sFlags",
+            "Operator": "and",
+            "Value": 64
+          }
+        ]
+      },
+      {
+        // Left number: Current welding
+        "PropertyCode": "State.Ireal",
+        "Display": "text",
+        "Offset": {
+          "X": 215,
+          "Y": 116
+        },
+        "TextStyle": {
+          "FontSize": 55,
+          " NumberMultiplier": 1,
+          " NumberDigits": 0
+        },
+        "Color": "#ff8100",
+        "Conditions": [
+          {
+            "PropertyCode": "State.sFlags",
+            "Operator": "and",
+            "Value": 64
+          }
+        ]
+      },
+      // Program number indicator
+      {
+        "PropertyCode": "State.WPSProg",
+        "Display": "text",
+        "Offset": {
+          "X": 125,
+          "Y": 210
+        },
+        "TextStyle": {
+          "FontSize": 50,
+          " NumberMultiplier": 1,
+          " NumberDigits": 0
+        },
+        "Color": "#ff8100",
+        "Conditions": [
+          {
+            "PropertyCode": "State.WPSProg",
+            "Operator": "ne",
+            "Value": 10
+          }
+        ]
+      },
+
+      /*
+
+// combined led 1
+      {
+       // "PropertyCode": "State.led_a",
+        "Display": "led",
+        "Offset": {
+          "X": 125,
+          "Y": 222
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 4,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit1",
+            "Operator": "and",
+            "Value": "1"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_b",
+        "Display": "led",
+        "Offset": {
+          "X": 143,
+          "Y": 226
+        },
+        "LedStyle": {
+          "Width": 4,
+          "Height": 18,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit1",
+            "Operator": "and",
+            "Value": "2"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_c",
+        "Display": "led",
+        "Offset": {
+          "X": 143,
+          "Y": 248
+        },
+        "LedStyle": {
+          "Width": 4,
+          "Height": 18,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit1",
+            "Operator": "and",
+            "Value": "4"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_d",
+        "Display": "led",
+        "Offset": {
+          "X": 125,
+          "Y": 266
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 4,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit1",
+            "Operator": "and",
+            "Value": "8"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_e",
+        "Display": "led",
+        "Offset": {
+          "X": 121,
+          "Y": 248
+        },
+        "LedStyle": {
+          "Width": 4,
+          "Height": 18,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit1",
+            "Operator": "and",
+            "Value": "16"
+          },
+        ]
+      },
+
+
+      {
+       // "PropertyCode": "State.led_f",
+        "Display": "led",
+        "Offset": {
+          "X": 121,
+          "Y": 226
+        },
+        "LedStyle": {
+          "Width": 4,
+          "Height":18,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit1",
+            "Operator": "and",
+            "Value": "32"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_g",
+        "Display": "led",
+        "Offset": {
+          "X": 125,
+          "Y": 244
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 4,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit1",
+            "Operator": "and",
+            "Value": "64"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_h",
+        "Display": "led",
+        "Offset": {
+          "X": 149,
+          "Y": 266
+        },
+        "LedStyle": {
+          "Width": 4,
+          "Height": 4,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit1",
+            "Operator": "and",
+            "Value": "128"
+          },
+        ]
+      },
+
+
+// combined led 2
+      {
+       // "PropertyCode": "State.led_a",
+        "Display": "led",
+        "Offset": {
+          "X": 210,
+          "Y": 131
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+    //  "Color": "#ffffff",
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit2",
+            "Operator": "and",
+            "Value": "1"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_b",
+        "Display": "led",
+        "Offset": {
+          "X": 228,
+          "Y": 133
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        //"Color": "#ffffff",
+        "Conditions": [
+          {
+           //  ConditionNegative: true,  
+            "PropertyCode": "digit2",
+            "Operator": "and",
+            "Value": "2"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_c",
+        "Display": "led",
+        "Offset": {
+          "X": 228,
+          "Y": 158
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+           //  ConditionNegative: true,  
+            "PropertyCode": "digit2",
+            "Operator": "and",
+            "Value": "4"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_d",
+        "Display": "led",
+        "Offset": {
+          "X": 210,
+          "Y": 179
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+           //  ConditionNegative: true,  
+            "PropertyCode": "digit2",
+            "Operator": "and",
+            "Value": "8"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_e",
+        "Display": "led",
+        "Offset": {
+          "X": 205,
+          "Y": 158
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit2",
+            "Operator": "and",
+            "Value": "16"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_f",
+        "Display": "led",
+        "Offset": {
+          "X": 205,
+          "Y": 133
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height":24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit2",
+            "Operator": "and",
+            "Value": "32"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_g",
+        "Display": "led",
+        "Offset": {
+          "X": 210,
+          "Y": 155
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit2",
+            "Operator": "and",
+            "Value": "64"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_h",
+        "Display": "led",
+        "Offset": {
+          "X": 234,
+          "Y": 180
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height":5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit2",
+            "Operator": "and",
+            "Value": "128"
+          },
+        ]
+      },
+
+// combined led 3
+      {
+       // "PropertyCode": "State.led_a",
+        "Display": "led",
+        "Offset": {
+          "X": 245,
+          "Y": 131
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit3",
+            "Operator": "and",
+            "Value": "1"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_b",
+        "Display": "led",
+        "Offset": {
+          "X": 263,
+          "Y": 133
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit3",
+            "Operator": "and",
+            "Value": "2"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_c",
+        "Display": "led",
+        "Offset": {
+          "X": 263,
+          "Y": 158
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit3",
+            "Operator": "and",
+            "Value": "4"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_d",
+        "Display": "led",
+        "Offset": {
+          "X": 245,
+          "Y": 179
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit3",
+            "Operator": "and",
+            "Value": "8"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_e",
+        "Display": "led",
+        "Offset": {
+          "X": 240,
+          "Y": 158
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit3",
+            "Operator": "and",
+            "Value": "16"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_f",
+        "Display": "led",
+        "Offset": {
+          "X": 240,
+          "Y": 133
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height":24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit3",
+            "Operator": "and",
+            "Value": "32"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_g",
+        "Display": "led",
+        "Offset": {
+          "X": 245,
+          "Y": 155
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit3",
+            "Operator": "and",
+            "Value": "64"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_h",
+        "Display": "led",
+        "Offset": {
+          "X": 269,
+          "Y": 180
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height":5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit3",
+            "Operator": "and",
+            "Value": "128"
+          },
+        ]
+      },
+
+
+// combined led 4
+      {
+       // "PropertyCode": "State.led_a",
+        "Display": "led",
+        "Offset": {
+          "X": 280,
+          "Y": 131
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit4",
+            "Operator": "and",
+            "Value": "1"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_b",
+        "Display": "led",
+        "Offset": {
+          "X": 298,
+          "Y": 133
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit4",
+            "Operator": "and",
+            "Value": "2"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_c",
+        "Display": "led",
+        "Offset": {
+          "X": 298,
+          "Y": 158
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit4",
+            "Operator": "and",
+            "Value": "4"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_d",
+        "Display": "led",
+        "Offset": {
+          "X": 280,
+          "Y": 179
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit4",
+            "Operator": "and",
+            "Value": "8"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_e",
+        "Display": "led",
+        "Offset": {
+          "X": 275,
+          "Y": 158
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit4",
+            "Operator": "and",
+            "Value": "16"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_f",
+        "Display": "led",
+        "Offset": {
+          "X": 275,
+          "Y": 133
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height":24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit4",
+            "Operator": "and",
+            "Value": "32"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_g",
+        "Display": "led",
+        "Offset": {
+          "X": 280,
+          "Y": 155
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit4",
+            "Operator": "and",
+            "Value": "64"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_h",
+        "Display": "led",
+        "Offset": {
+          "X": 304,
+          "Y": 180
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height":5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit4",
+            "Operator": "and",
+            "Value": "128"
+          },
+        ]
+      },
+
+
+// combined led 5
+      {
+       // "PropertyCode": "State.led_a",
+        "Display": "led",
+        "Offset": {
+          "X": 341,
+          "Y": 131
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit5",
+            "Operator": "and",
+            "Value": "1"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_b",
+        "Display": "led",
+        "Offset": {
+          "X": 359,
+          "Y": 133
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit5",
+            "Operator": "and",
+            "Value": "2"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_c",
+        "Display": "led",
+        "Offset": {
+          "X": 359,
+          "Y": 158
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit5",
+            "Operator": "and",
+            "Value": "4"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_d",
+        "Display": "led",
+        "Offset": {
+          "X": 341,
+          "Y": 179
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit5",
+            "Operator": "and",
+            "Value": "8"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_e",
+        "Display": "led",
+        "Offset": {
+          "X": 336,
+          "Y": 158
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit5",
+            "Operator": "and",
+            "Value": "16"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_f",
+        "Display": "led",
+        "Offset": {
+          "X": 336,
+          "Y": 133
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height":24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit5",
+            "Operator": "and",
+            "Value": "32"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_g",
+        "Display": "led",
+        "Offset": {
+          "X": 341,
+          "Y": 155
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit5",
+            "Operator": "and",
+            "Value": "64"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_h",
+        "Display": "led",
+        "Offset": {
+          "X": 365,
+          "Y": 180
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height":5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit5",
+            "Operator": "and",
+            "Value": "128"
+          },
+        ]
+      },
+
+// combined led 6
+      {
+       // "PropertyCode": "State.led_a",
+        "Display": "led",
+        "Offset": {
+          "X": 376,
+          "Y": 131
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit6",
+            "Operator": "and",
+            "Value": "1"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_b",
+        "Display": "led",
+        "Offset": {
+          "X": 394,
+          "Y": 133
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit6",
+            "Operator": "and",
+            "Value": "2"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_c",
+        "Display": "led",
+        "Offset": {
+          "X": 394,
+          "Y": 158
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit6",
+            "Operator": "and",
+            "Value": "4"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_d",
+        "Display": "led",
+        "Offset": {
+          "X": 376,
+          "Y": 179
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit6",
+            "Operator": "and",
+            "Value": "8"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_e",
+        "Display": "led",
+        "Offset": {
+          "X": 371,
+          "Y": 158
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit6",
+            "Operator": "and",
+            "Value": "16"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_f",
+        "Display": "led",
+        "Offset": {
+          "X": 371,
+          "Y": 133
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height":24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit6",
+            "Operator": "and",
+            "Value": "32"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_g",
+        "Display": "led",
+        "Offset": {
+          "X": 376,
+          "Y": 155
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit6",
+            "Operator": "and",
+            "Value": "64"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_h",
+        "Display": "led",
+        "Offset": {
+          "X": 400,
+          "Y": 180
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height":5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit6",
+            "Operator": "and",
+            "Value": "128"
+          },
+        ]
+      },
+
+
+// combined led 7
+      {
+       // "PropertyCode": "State.led_a",
+        "Display": "led",
+        "Offset": {
+          "X": 411,
+          "Y": 131
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit7",
+            "Operator": "and",
+            "Value": "1"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_b",
+        "Display": "led",
+        "Offset": {
+          "X": 429,
+          "Y": 133
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit7",
+            "Operator": "and",
+            "Value": "2"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_c",
+        "Display": "led",
+        "Offset": {
+          "X": 429,
+          "Y": 158
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit7",
+            "Operator": "and",
+            "Value": "4"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_d",
+        "Display": "led",
+        "Offset": {
+          "X": 411,
+          "Y": 179
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit7",
+            "Operator": "and",
+            "Value": "8"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_e",
+        "Display": "led",
+        "Offset": {
+          "X": 406,
+          "Y": 158
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height": 24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit7",
+            "Operator": "and",
+            "Value": "16"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_f",
+        "Display": "led",
+        "Offset": {
+          "X": 406,
+          "Y": 133
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height":24,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit7",
+            "Operator": "and",
+            "Value": "32"
+          },
+        ]
+      },
+      {
+       // "PropertyCode": "State.led_g",
+        "Display": "led",
+        "Offset": {
+          "X": 411,
+          "Y": 155
+        },
+        "LedStyle": {
+          "Width": 18,
+          "Height": 5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+            // ConditionNegative: true,  
+            "PropertyCode": "digit7",
+            "Operator": "and",
+            "Value": "64"
+          },
+        ]
+      },
+
+      {
+       // "PropertyCode": "State.led_h",
+        "Display": "led",
+        "Offset": {
+          "X": 435,
+          "Y": 180
+        },
+        "LedStyle": {
+          "Width": 5,
+          "Height":5,
+         // "Radius": 6
+        },
+        "Conditions": [
+          {
+             //ConditionNegative: true,  
+            "PropertyCode": "digit7",
+            "Operator": "and",
+            "Value": "128"
+          },
+        ]
+      },
+
+*/
+
+      // roll butt led
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 533,
+          "Y": 94
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.sFlags",
+            "Operator": "and",
+            "Value": 256
+          }
+        ]
+      },
+
+      // tor butt led
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 454,
+          "Y": 94
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.sFlags",
+            "Operator": "and",
+            "Value": 512
+          }
+        ]
+      },
+      // tor led
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 533,
+          "Y": 144
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "ne",
+            "Value": 888999
+          }
+        ]
+      },
+      // circ led
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 533,
+          "Y": 164
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "e",
+            "Value": 888
+          }
+        ]
+      },
+      // ind led
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 455,
+          "Y": 144
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+      // U led
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 455,
+          "Y": 164
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "ConditionNegative": true,
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+      // m/min led
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 175,
+          "Y": 134
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 1
+          },
+          {
+            "ConditionNegative": true, /// migmag mode only
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+
+      // I led
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 175,
+          "Y": 154
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "ConditionNegative": true,
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 1
+          }
+        ]
+      },
+
+
+      // S led
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 175,
+          "Y": 174
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "e",
+            "Value": 888
+          }
+        ]
+      },
+
+      //migmag led
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 175,
+          "Y": 74
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "ConditionNegative": true,
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+      // mma led
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 175,
+          "Y": 94
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+      // program led
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 175,
+          "Y": 218
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "e",
+            "Value": 888
+          }
+        ]
+      },
+      // synergy manual leds
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 277,
+          "Y": 241
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 4
+          },
+          {
+            "ConditionNegative": true, /// migmag mode only
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 277,
+          "Y": 261
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "ConditionNegative": true,
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 4
+          },
+          {
+            "ConditionNegative": true, /// migmag mode only
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+      // wire type leds
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 353,
+          "Y": 241
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 8
+          },
+          {
+            "ConditionNegative": true, /// migmag mode only
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 353,
+          "Y": 261
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "ConditionNegative": true,
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 8
+          },
+          {
+            "ConditionNegative": true, /// migmag mode only
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+
+
+      // torch mode leds ////////
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 533,
+          "Y": 221
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "ConditionNegative": true,
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 48
+          },
+          {
+            "ConditionNegative": true, /// migmag mode only
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 533,
+          "Y": 241
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 32
+          },
+          {
+            "ConditionNegative": true, /// migmag mode only
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 533,
+          "Y": 261
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 16
+          },
+          {
+            "ConditionNegative": true, /// migmag mode only
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+      // wire diam leds ////////
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 455,
+          "Y": 221
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [ // if State.pFlags & 0xC0 = 0xC0
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 128
+          },
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 64
+          },
+          {
+            "ConditionNegative": true, /// migmag mode only
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 455,
+          "Y": 241
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [ // if State.pFlags & 0xC0 = 0x80
+          {
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 128
+          },
+          {
+            "ConditionNegative": true,
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 64
+          },
+          {
+            "ConditionNegative": true, /// migmag mode only
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      },
+      {
+        "Display": "led",
+        "Offset": {
+          "X": 455,
+          "Y": 261
+        },
+        "LedStyle": {
+          "Width": 16,
+          "Height": 7
+        },
+        "Conditions": [ // if State.pFlags & 0xC0 = 0x00
+          {
+            "ConditionNegative": true,
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 192
+          },
+          {
+            "ConditionNegative": true, /// migmag mode only
+            "PropertyCode": "State.pFlags",
+            "Operator": "and",
+            "Value": 2
+          }
+        ]
+      }
+    ]
+  },
+
+  "PropertyLimits": {
+    "Limits": [
+      {
+        "PropertyCode": "State.Imigmag",
+        "Description": "Ток MIG/MAG",
+        "MinValue": 18,
+        "MaxValue": 500
+      },
+      {
+        "PropertyCode": "State.Imma",
+        "Description": "Ток MMA",
+        "MinValue": 20,
+        "MaxValue": 500
+      },
+      {
+        "PropertyCode": "State.Umigmag",
+        "Description": "Напряжение MIG/MAG",
+        "MinValue": 14,
+        "MaxValue": 50,
+        "Step": 0.1
+      },
+      {
+        "PropertyCode": "State.Lmigmag",
+        "Description": "Индуктивность MIG/MAG",
+        "MinValue": 1,
+        "MaxValue": 50
+      },
+      {
+        "PropertyCode": "State.Uzk",
+        "Description": "Напряжение заварки кратера",
+        "MinValue": 14,
+        "MaxValue": 50,
+        "Step": 0.1
+      },
+      {
+        "PropertyCode": "State.Izk",
+        "Description": "Ток заварки кратера",
+        "MinValue": 60,
+        "MaxValue": 500,
+      },
+      {
+        "PropertyCode": "State.Tpw",
+        "Description": "Время точечной сварки",
+        "MinValue": 0.5,
+        "MaxValue": 5,
+        "Step": 0.1
+      },
+      {
+        "PropertyCode": "State.Lmma",
+        "Description": "Индуктивность MMA",
+        "MinValue": 1,
+        "MaxValue": 250,
+      },
+      {
+        "PropertyCode": "State.WPSProg",
+        "Description": "Номер программы",
+        "MinValue": 1,
+        "MaxValue": 9,
+      },
+    ]
+  },
+
+  "ModeDefinitions": {
+    "WeldingMode": {
+      //  "ConditionNegative": false,
+      "Conditions": [
+        {
+          "PropertyCode": "State.sFlags",
+          "Operator": "and",
+          "Value": 64
+        }
+      ]
+    },
+    "ErrorMode": {
+      //  "ConditionNegative": false,
+      "Conditions": [
+        {
+          "PropertyCode": "State.errFlags",
+          "Operator": "ne",
+          "Value": "0"
+        }
+      ]
+    },
+
+    "LimitedMode": {
+      //  "ConditionNegative": false,
+      "Conditions": [
+        {
+          "PropertyCode": "State.sFlags",
+          "Operator": "and",
+          "Value": 16384 //0x4000
+        },
+      ]
+    },
+
+    "BlockMode": {
+      //  "ConditionNegative": false,
+      "Conditions": [
+        {
+          "PropertyCode": "State.sFlags",
+          "Operator": "and",
+          "Value": 40960 //0xA000
+        },
+      ]
+    },
+  }
+
+}

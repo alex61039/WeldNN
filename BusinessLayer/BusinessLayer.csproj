@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EBB5D912-33D3-4CCD-AF39-FA1CA7D09909}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BusinessLayer</RootNamespace>
+    <AssemblyName>BusinessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.5.3.2, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.3.2\lib\net40\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.2.2.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.5.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.1\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\AccountsManager.cs" />
+    <Compile Include="Configuration\TestingOptions.cs" />
+    <Compile Include="Configuration\StorageOptions.cs" />
+    <Compile Include="Interfaces\Context\IWeldingContextFactory.cs" />
+    <Compile Include="Interfaces\Reports\IReportGenerator.cs" />
+    <Compile Include="Interfaces\Storage\IDocumentsService.cs" />
+    <Compile Include="Models\Configuration\ConfigurationExtension.cs" />
+    <Compile Include="Models\Configuration\PropertyCodes.cs" />
+    <Compile Include="Models\Configuration\WeldingMachineTypeConfiguration.cs" />
+    <Compile Include="Models\Notifications\NotificationsShortInfo.cs" />
+    <Compile Include="Models\Notifications\NotificationTypeBase.cs" />
+    <Compile Include="Models\Notifications\NotificationTypeMaintenance.cs" />
+    <Compile Include="Models\Notifications\NotificationTypeReportCreated.cs" />
+    <Compile Include="Models\Notifications\NotificationTypeWeldingError.cs" />
+    <Compile Include="Models\Notifications\NotificationTypeWeldingMachineAlert.cs" />
+    <Compile Include="Models\Notifications\NotificationTypeWeldingParametersAlert.cs" />
+    <Compile Include="Models\Notifications\NotificationTypeMessage.cs" />
+    <Compile Include="Models\ReportRequest.cs" />
+    <Compile Include="Models\ScancodeEntity.cs" />
+    <Compile Include="Models\UserPermissionAccess.cs" />
+    <Compile Include="Models\WeldingMachine\PanelState.cs" />
+    <Compile Include="Models\WeldingMachine\ProgramControls.cs" />
+    <Compile Include="Models\WeldingMachine\StateSummary.cs" />
+    <Compile Include="Models\WeldingMachine\StateSummaryExtension.cs" />
+    <Compile Include="Models\WeldingMaterialTypes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\Statuses.cs" />
+    <Compile Include="Services\Mailer\MailerService.cs" />
+    <Compile Include="Services\Notifications\NotificationsService.cs" />
+    <Compile Include="Services\QueueTasks\QueueTasksService.cs" />
+    <Compile Include="Services\Reports\ReportGenerator_Diagram.cs" />
+    <Compile Include="Services\Reports\ReportGeneratorBase.cs" />
+    <Compile Include="Services\Reports\ReportGenerator_Timeline.cs" />
+    <Compile Include="Services\Reports\ReportGenerator_Maintenance.cs" />
+    <Compile Include="Services\Reports\ReportGenerator_Passive_Limits.cs" />
+    <Compile Include="Services\Reports\ReportGenerator_Errors.cs" />
+    <Compile Include="Services\Reports\ReportGenerator_Graph.cs" />
+    <Compile Include="Services\Reports\ReportGenerator_Params_Compare.cs" />
+    <Compile Include="Services\Reports\ReportGenerator_UserSessions.cs" />
+    <Compile Include="Services\Reports\ReportGenerator_Params.cs" />
+    <Compile Include="Services\Reports\ReportGenerator_General.cs" />
+    <Compile Include="Services\Reports\ReportBuilder.cs" />
+    <Compile Include="Services\Storage\DocumentsService.cs" />
+    <Compile Include="Utils\CRCChecker.cs" />
+    <Compile Include="Utils\Network\NetworkHelper.cs" />
+    <Compile Include="Utils\RFIDHelper.cs" />
+    <Compile Include="Utils\ScancodesHelper.cs" />
+    <Compile Include="Utils\StringsHelper.cs" />
+    <Compile Include="Utils\ReportsDateTimeFormats.cs" />
+    <Compile Include="Utils\WeldingDateTimeFormat.cs" />
+    <Compile Include="Welding\Configuration\WeldingMachineTypeConfigurationLoader.cs" />
+    <Compile Include="Welding\Controls\ProgramControlsService.cs" />
+    <Compile Include="Welding\Controls\ProgramControlsBuilder.cs" />
+    <Compile Include="Welding\Machine\ConditionsSetChecker.cs" />
+    <Compile Include="Welding\Machine\FlowsCalculator.cs" />
+    <Compile Include="Welding\Machine\MachineControlMessageBuilder.cs" />
+    <Compile Include="Welding\Machine\MachineStateParser.cs" />
+    <Compile Include="Welding\Machine\MachineStateService.cs" />
+    <Compile Include="Welding\Panel\PanelStateBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{f07cc3c4-2bd2-45b3-a3e8-3ecaec5bad99}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Samples\conf1_sample_alloy_mx.json" />
+    <None Include="Samples\conf1_sample_alloy_mp.json" />
+    <None Include="Samples\conf1_sample_mp.json" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

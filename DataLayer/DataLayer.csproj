@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F07CC3C4-2BD2-45B3-A3E8-3ECAEC5BAD99}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataLayer</RootNamespace>
+    <AssemblyName>DataLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Welding\Alert.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\AuthenticateUser_Result.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\DetailAssembly.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\DetailAssemblyType.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\DetailPart.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\DetailPartType.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\Document.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\Dump.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\EmailTemplate.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\InboxMessage.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\InboxNotification.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\LibraryDocument.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\LogAction.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\LogActionItem.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\Mail.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\MailAttachment.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\Maintenance.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\MeasureUnit.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\NetworkDevice.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\Notification.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\ObjectUpdate.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\Organization.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\OrganizationUnit.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\Parameter.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\QueuePushEvent.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\QueueTask.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\Report_General_Result.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\Setting.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\Status.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\Survey.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\SurveyPass.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\SurveyPassQuestionAnswer.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\SurveyQuestion.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\SurveyQuestionOption.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\sysdiagram.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\Translation.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\UserAccount.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\UserAccountSession.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\UserAct.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\UserPermission.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\UserRole.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\UserRolePermission.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\UserToken.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\vStatePropValue.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\vWeldingMachineParameterValueNOLOCK.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\vWeldingMachineStateNOLOCK.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingAssemblyControl.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingAssemblyControlResult.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingAssemblyInstruction.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeldingContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeldingContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingContextConstructors.cs" />
+    <Compile Include="Welding\WeldingDetailAssemblyTask.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingDetailAssemblyTaskState.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingLimitProgram.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingLimitProgramHistory.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingLimitProgramHistoryParameter.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingLimitProgramParameter.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingLimitProgramSchedule.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingMachine.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingMachineParameterValue.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingMachineState.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingMachineType.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingMaterial.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Welding\WeldingMaterialType.cs">
+      <DependentUpon>WeldingContext.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Welding\WeldingContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WeldingContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="Welding\WeldingContext.edmx.diagram">
+      <DependentUpon>WeldingContext.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Welding\WeldingContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>WeldingContext.Context.cs</LastGenOutput>
+      <DependentUpon>WeldingContext.edmx</DependentUpon>
+    </Content>
+    <Content Include="Welding\WeldingContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WeldingContext.edmx</DependentUpon>
+      <LastGenOutput>WeldingContext.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
